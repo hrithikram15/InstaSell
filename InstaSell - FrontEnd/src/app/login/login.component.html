@@ -1,0 +1,123 @@
+<!-- <div class="container mt-5">
+    <div class="card" style="padding: 20px;">
+        <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Username</mat-label>
+                <input matInput ngModel name="userName" id="userName" placeholder="Username">
+                <mat-hint>Username</mat-hint>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Password</mat-label>
+                <input type="password" matInput ngModel name="userPassword" id="userPassword" placeholder="Password">
+                <mat-hint>Password</mat-hint>
+            </mat-form-field>
+
+            
+
+              <button class="w-100" type="submit" mat-raised-button color="primary">Login</button>
+           
+        </form>
+
+       
+    </div>
+
+    <div class="text-center">
+        <br>
+        <button class="w-20" type="button" mat-raised-button color="primary" (click)="registerUser()">Sign Up</button>
+    </div>
+</div> -->
+
+
+
+<div class="col-md-12">
+    <div class="card card-container">
+      <img
+        id="profile-img"
+        src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+        class="profile-img-card"
+      />
+      <form
+        *ngIf="!isLoggedIn"
+        name="form"
+        (ngSubmit)="f.form.valid && onSubmit()"
+        #f="ngForm"
+        novalidate
+      >
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input
+            type="text"
+            class="form-control"
+            name="username"
+            [(ngModel)]="form.username"
+            required
+            #username="ngModel"
+          />
+          <div
+            class="alert alert-danger"
+            role="alert"
+            *ngIf="username.errors && f.submitted"
+          >
+            Username is required!
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            name="password"
+            [(ngModel)]="form.password"
+            required
+            minlength="6"
+            #password="ngModel"
+          />
+          <div
+            class="alert alert-danger"
+            role="alert"
+            *ngIf="password.errors && f.submitted"
+          >
+            <div *ngIf="password.errors.required">Password is required</div>
+            <div *ngIf="password.errors.minlength">
+              Wrong Password
+            </div>
+          </div>
+        </div>
+        <div class="card">
+            <div class="card-body d-flex justify-content-between">
+              <div class="form-group">
+                <button class="btn btn-primary login">
+                  Login
+                </button>
+              </div>
+              <div class="form-group">
+                <button class="btn btn-primary register" routerLink="/register">
+                  Register
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          
+        <div class="form-group">
+          <div
+            class="alert alert-danger"
+            role="alert"
+            *ngIf="f.submitted && isLoginFailed"
+          >
+            Login failed: {{ errorMessage }}
+          </div>
+        </div>
+      </form>
+  
+      <div class="alert alert-success" *ngIf="isLoggedIn" [routerLink]="" >
+        Logged in as {{ roles }}.
+        
+      <!-- <div [routerLink]="'/cart'"> -->
+      
+      </div>
+    </div>
+  </div>
+  

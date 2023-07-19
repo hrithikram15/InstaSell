@@ -1,0 +1,77 @@
+<div class="product-image">
+    <img  />
+    </div>
+    <!-- <p>{{productDetail.productName}}</p> -->
+    <main class="container">
+      <!-- Left Column / Headphones Image -->
+      <div class="left-column">
+        <img data-image="black" [src]="productDetails.imageURL" alt="Product Image">
+      </div>
+      <!-- Right Column -->
+      <div class="right-column">
+        <!-- Product Description -->
+        <div class="product-description">
+          <!-- <span>{{productDetail.productName}}</span> -->
+          <h1>{{productDetails.brand}}</h1>
+          <h2>{{productDetails.productName}} </h2>
+          <p>{{productDetails.productDescription}}</p>
+        </div>
+        <!-- Product Configuration -->
+        <div class="product-configuration">
+          <!-- Product Color -->
+          <!-- <div class="product-color">
+            <span>Color</span>
+            <div class="color-choose">
+              <div>
+                <input data-image="red" type="radio" id="red" name="color" value="red" checked>
+                <label for="red"><span></span></label>
+              </div>
+              <div>
+                <input data-image="blue" type="radio" id="blue" name="color" value="blue">
+                <label for="blue"><span></span></label>
+              </div>
+              <div>
+                <input data-image="black" type="radio" id="black" name="color" value="black">
+                <label for="black"><span></span></label>
+              </div>
+            </div>
+          </div>
+      -->
+          <!-- Cable Configuration -->
+          <!-- <div class="cable-config">
+            <span>Cable configuration</span>
+            <div class="cable-choose">
+              <button>Straight</button>
+              <button>Coiled</button>
+              <button>Long-coiled</button>
+            </div>
+            <a href="#">How to configurate your headphones</a>
+          </div> -->
+        </div>
+        <!-- Product Pricing -->
+        <div class="product-price">
+          <span style="text-decoration: line-through;">₹{{productDetails.productActualPrice}}</span>
+          <span>₹{{productDetails.productDiscountedPrice}}</span> 
+            <br>
+          
+        </div>
+        <br>
+
+        <a class="cart-btn" (click)="addToCart(productDetails.productId)">Add to cart</a>
+        <br>
+        <br>
+        
+
+          <a  class="cart-btn" (click)="addReview(productDetails.productId)">Add Review</a>
+          <br>
+          <br>
+          
+  
+            <a  class="cart-btn" (click)="showAllReviews(productDetails.productId)">Show All Reviews</a>
+  
+      </div>
+
+    
+    </main>
+
+    

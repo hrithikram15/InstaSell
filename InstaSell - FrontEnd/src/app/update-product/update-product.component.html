@@ -1,0 +1,57 @@
+
+        
+        <div class="row container d-flex justify-content-center">
+            <div class="col-md-6 col-lg-4">
+            
+                <h1>Update Product</h1>
+            
+              <form #registerForm="ngForm" (ngSubmit)="updateProduct(registerForm)">
+            
+                <mat-form-field appearance="outline" class="w-100">
+                  <mat-label>Product ID</mat-label>
+                  <input matInput ngModel name="productId" id="productId" placeholder="Product ID" [value]="productDetails.productId"  disabled>
+                  
+              </mat-form-field>
+            
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Brand</mat-label>
+                    <input matInput ngModel name="brand" id="brand" placeholder="Brand" [value]="productDetails.brand">
+                    
+                </mat-form-field>
+            
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Model Name</mat-label>
+                    <input matInput ngModel name="productName" id="productName" placeholder="Model Name" [value]="productDetails.productName">
+                    
+                </mat-form-field>
+            
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Product Description</mat-label>
+                    <input matInput ngModel name="productDescription" id="productDescription" placeholder="Product Description" [value]="productDetails.productDescription">
+                   
+                </mat-form-field>
+            
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Actual Price</mat-label>
+                    <input matInput ngModel name="productActualPrice" id="productActualPrice" placeholder="Actual Price" [value]="productDetails.productActualPrice">
+                    
+                </mat-form-field>
+            
+                <mat-form-field appearance="outline" class="w-100">
+                    <mat-label>Offer Price</mat-label>
+                    <input type="text" matInput ngModel name="productDiscountedPrice" id="productDiscountedPrice" placeholder="Discounted Price" [value]="productDetails.productDiscountedPrice">
+                </mat-form-field>
+            
+                <mat-form-field appearance="outline" class="w-100">
+                  <mat-label>Image Link</mat-label>
+                  <input type="text" matInput ngModel name="imageURL" id="imageURL" placeholder="Image URL" [value]="productDetails.imageURL">
+              </mat-form-field>
+            
+                <div class="text-center">
+                    <button type="submit" mat-raised-button color="primary">Update Product</button>
+                </div>
+            </form>
+                      </div>
+                       </div>
+                       
+            

@@ -1,0 +1,26 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<div class="container">
+<div class="row">
+    <p>See Reviews of {{productDetails.brand}} </p>
+
+    <div class="col-md-8">
+        <div class="media g-mb-30 media-comment" *ngFor="let rObj of ratings">
+            <img class="d-flex g-width-50 g-height-50 rounded-circle g-mt-3 g-mr-15" src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Image Description">
+            <div class="media-body u-shadow-v18 g-bg-secondary g-pa-30">
+              <div class="g-mb-15">
+                <h5 class="h5 g-color-gray-dark-v1 mb-0">{{rObj.userName}}</h5>
+                <span class="g-color-gray-dark-v4 g-font-size-12">{{rObj.rating}} Stars</span>
+              </div>
+        
+              <p>{{rObj.review}} </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <img data-image="black" [src]="productDetails.imageURL" alt="Product Image" style="height: 350px; width: 300px;">
+
+    </div>
+    </div>
+   </div>
+    

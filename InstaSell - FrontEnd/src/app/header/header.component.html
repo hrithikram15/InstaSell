@@ -1,0 +1,103 @@
+ <mat-toolbar color="accent" class="right">
+  <button  routerLink="/login" mat-raised-button color="accent" *ngIf="flag2">{{ currentUser.username }}</button>
+  <button  (click)="login()" routerLink="/login" mat-raised-button color="accent" *ngIf="!flag2" >Login</button>
+  <button  (click)="logout()" mat-raised-button color="warn">Logout</button>
+</mat-toolbar> 
+
+<!-- <mat-toolbar color="primary" *ngIf="isLoggedIn()">
+  <button mat-raised-button color="primary" routerLink="/">Home</button>
+  <button *ngIf="!isAdmin()" mat-raised-button color="primary" routerLink="/cart">Cart</button>
+  <button *ngIf="!isAdmin()" mat-raised-button color="primary" routerLink="/myOrders">My Orders</button>
+  <button *ngIf="isAdmin()" mat-raised-button color="primary" routerLink="/addNewProduct">Add New Product</button>
+  <button *ngIf="isAdmin()" mat-raised-button color="primary" routerLink="/showProductDetailes">Show All Products</button>
+
+  <button *ngIf="isAdmin()" mat-raised-button color="primary" routerLink="/orderInformation">Orders</button>
+</mat-toolbar> --> 
+
+<!-- 
+ <mat-toolbar class="gradient-custom" color="accent">
+  <span>InstaSell</span>
+  <span class="space-buttons"></span>
+  <button  routerLink="/login" mat-raised-button color="accent" *ngIf="flag2">{{ currentUser.username }}</button>
+  <button  (click)="login()" routerLink="/login" mat-raised-button color="accent" *ngIf="!flag2" >Login</button>
+  <button  (click)="logout()" mat-raised-button color="warn">Logout</button>
+</mat-toolbar> -->
+
+<!-- <mat-toolbar class="gradient-custom" color="primary" >
+  <button class="gradient-custom1" mat-raised-button color="primary" routerLink="/">Home</button>
+  <button class="gradient-custom1"  mat-raised-button color="primary" routerLink="/cart">Cart</button>
+  <button class="gradient-custom1" mat-raised-button color="primary" routerLink="/myOrders">My Orders</button>
+  <button class="gradient-custom1" mat-raised-button color="primary" routerLink="/addProduct" *ngIf="flag3">Add New Product</button>
+  <button class="gradient-custom1" mat-raised-button color="primary" routerLink="/allProducts">Show All Products</button>
+
+  <button class="gradient-custom1" mat-raised-button color="primary" routerLink="/orderInformation">Orders</button>
+</mat-toolbar> -->
+
+
+<head>
+  <!-- Begin of Sources -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <!-- End of Sources -->
+
+  <!-- Begin of Header -->
+  <header>Jaybeehoney</header>
+  <!-- End of Header -->
+
+</head>
+<nav class="navbar navbar-expand-lg navbar-light shadow">
+  <div class="container d-flex justify-content-between align-items-center">
+    <a class="navbar-brand text-success logo h1 align-self-center" href="/">
+      <img src="assets\twitter_header_photo_1.png" alt="Logo" class="logo">
+    </a>
+    <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
+      data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false"
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between"
+      id="templatemo_main_nav">
+      <div class="flex-fill">
+        <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
+          <!-- <li class="nav-item">
+            <a class="nav-link" routerLink="/cart">Cart</a>
+          </li> -->
+          <li class="nav-item">
+            <a class="nav-link"  routerLink="/orderInformation"  *ngIf="flag3">All Orders</a>
+          </li> <li class="nav-item">
+            <a class="nav-link" routerLink="/myOrders" *ngIf="!flag3">My Orders</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/addProduct" *ngIf="flag3">Add new Product</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/adminProductDetails" *ngIf="flag3">Show All Products</a>
+          </li>
+        </ul>
+      </div>
+      <div class="navbar align-self-center d-flex">
+        <div class="d-lg-none flex-sm-fill mt-3 mb-4 col-7 col-sm-auto pr-3">
+          <div class="input-group">
+            <input type="text" class="form-control" id="inputMobileSearch" placeholder="Search ...">
+            <div class="input-group-text">
+              <i class="fa fa-fw fa-search"></i>
+            </div>
+          </div>
+        </div>
+        <a class="nav-icon d-none d-lg-inline" href="#" data-bs-toggle="modal" data-bs-target="#templatemo_search">
+          <i class="fa fa-fw fa-search text-dark mr-2"></i>
+        </a>
+        <a class="nav-icon position-relative text-decoration-none" routerLink="/cart">
+          <i class="fa fa-fw fa-cart-arrow-down text-dark mr-1"></i>
+          <span
+            class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark">{{numOfProducts}}</span>
+        </a>
+        <a class="nav-icon position-relative text-decoration-none" routerLink="/profile">
+          <i class="fa fa-fw fa-user text-dark mr-3"></i>
+          <span class="position-absolute top-0 left-100 translate-middle badge rounded-pill bg-light text-dark"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>

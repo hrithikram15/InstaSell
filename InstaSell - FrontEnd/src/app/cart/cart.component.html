@@ -1,0 +1,76 @@
+<!-- <div class="container mt-5">
+
+  <table mat-table [dataSource]="productDetails" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Order Id </th>
+      <td mat-cell *matCellDef="let element"> {{element.productName}} </td>
+    </ng-container>
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.productDescription}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="price">
+          <th mat-header-cell *matHeaderCellDef> Address </th>
+          <td mat-cell *matCellDef="let element"> {{element.productDiscountedPrice}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="discountedPrice">
+          <th mat-header-cell *matHeaderCellDef> Contact No </th>
+          <td mat-cell *matCellDef="let element"> {{element.productActualPrice}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="action">
+          <th mat-header-cell *matHeaderCellDef> Action </th>
+          <td mat-cell *matCellDef="let element"> {{element.productId}} </td>
+        </ng-container>
+
+        
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+</div> -->
+
+
+<div class="container mt-5">
+
+  <div align="right" class="mb-3">
+    <button mat-raised-button (click)="checkout(productDetails)" style="color: gold; padding: 10px 20px;">Checkout</button>
+  </div>
+
+  <table>
+    <thead>
+        <tr>
+            <th>Product Name</th>
+            <th>Product Description</th>
+            <th>Price</th>
+            <th>Discounted Price</th>
+            <th>Action </th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let product of productDetails">
+            <td>{{product.productName}}</td>
+            <td>{{product.productDescription}}</td>
+            <td>{{product.productDiscountedPrice}}</td>
+            <td>{{product.productActualPrice}}</td>
+            <td>
+              <button mat-raised-button color="warn" (click)="delete(product.productId)">Delete</button>
+
+            </td>
+
+
+
+
+            
+        </tr>
+    </tbody>
+</table>
+
+</div>
+
+
+
